@@ -6,16 +6,20 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "Bem-vindo ao MARINESYS! Sistema em desenvolvimento."
+    return render_template('index.html')
 
 @app.route('/draft-survey', methods=['POST'])
 def draft_survey():
-    # Aqui você pode adicionar os cálculos do Draft Survey
-    # Por exemplo, processar os dados recebidos e criar o PDF
+    data = request.form['data']  # Recebe os dados do formulário
+    # Aqui você processaria os dados enviados (simulado por enquanto)
+    
+    # Criar um PDF temporário
     pdf_path = "draft_survey_report.pdf"
     c = canvas.Canvas(pdf_path)
     c.drawString(100, 750, "Draft Survey Report")
+    c.drawString(100, 730, f"Dados recebidos: {data[:50]}...")  # Exemplo de texto no PDF
     c.save()
+    
     return send_file(pdf_path, as_attachment=True)
 
 if __name__ == '__main__':

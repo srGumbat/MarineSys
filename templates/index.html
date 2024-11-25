@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARINESYS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .header {
+            background-color: #0056b3;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        .btn {
+            background-color: #0056b3;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+        .btn:hover {
+            background-color: #003f8a;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Bem-vindo ao MARINESYS</h1>
+        <p>Simplificando a automação portuária</p>
+    </div>
+    <div class="container mt-5">
+        <h2 class="text-center">Draft Survey</h2>
+        <form action="/draft-survey" method="POST" class="mt-4">
+            <div class="mb-3">
+                <label for="data" class="form-label">Insira os dados:</label>
+                <textarea id="data" name="data" rows="10" class="form-control"></textarea>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Gerar Relatório</button>
+            </div>
+        </form>
+    </div>    
+</body>
+</html>
